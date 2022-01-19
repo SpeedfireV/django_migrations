@@ -1,0 +1,3 @@
+Sklep internetowy z produktami
+
+Klient wchodzi na strone glowna - widzi liste kategorii i moze przejść na stronę kategorii
