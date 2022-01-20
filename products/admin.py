@@ -11,7 +11,7 @@ class ProductAdmin(admin.ModelAdmin):
 
 @admin.register(ProductType)
 class ProductTypeAdmin(admin.ModelAdmin):
-    list_display = ("product", "color", "size", )
+    list_display = ("product", "color", "size", "count")
 
 @admin.register(Order)
 class OrderAdmin(admin.ModelAdmin):
@@ -19,7 +19,7 @@ class OrderAdmin(admin.ModelAdmin):
 
 @admin.register(OrderPosition)
 class OrderPositionAdmin(admin.ModelAdmin):
-    list_display = ("product_type", "order", "product", "amount", )
+    list_display = ("product_type", "order", "amount", )
 
 @admin.register(Payment)
 class PaymentAdmin(admin.ModelAdmin):

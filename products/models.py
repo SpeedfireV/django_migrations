@@ -11,11 +11,8 @@ class Category(models.Model):
 class Product(models.Model):
 
     category = models.ForeignKey("Category", on_delete=models.CASCADE)
-
     name = models.CharField(max_length=255)
-
     price = models.DecimalField(max_digits=8, decimal_places=2)
-
     description = models.TextField()
 
     def __str__(self):
@@ -24,10 +21,9 @@ class Product(models.Model):
 
 class ProductType(models.Model):
     product = models.ForeignKey("Product", on_delete=models.CASCADE)
-
     color = models.CharField(max_length=255)
-
     size = models.CharField(max_length=255)
+    count = models.IntegerField()
 
     def __str__(self):
         return f"{self.color, self.size}"
@@ -35,7 +31,6 @@ class ProductType(models.Model):
 
 class Order(models.Model):
     cost = models.DecimalField(max_digits=8, decimal_places=2)
-
     surname = models.CharField(max_length=255)
 
     created = models.DateTimeField(auto_now_add=True)
@@ -46,20 +41,15 @@ class Order(models.Model):
 
 class OrderPosition(models.Model):
     product_type = models.ForeignKey("ProductType", on_delete=models.CASCADE)
-
     order = models.ForeignKey("Order", on_delete=models.CASCADE)
-
     amount = models.IntegerField()
 
-    product = models.ForeignKey("Product", on_delete=models.CASCADE)
-
     def __str__(self):
-        return f"{self.product, self.amount}"
+        return f"{self.amount}"
 
 
 class Payment(models.Model):
     order = models.ForeignKey("Order", on_delete=models.CASCADE)
-
     status = models.BooleanField()
 
     def __str__(self):
