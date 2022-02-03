@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Strona Główna</title>
+</head>
+<body>
+<h1>Witamy na stronie głównej</h1>
+
+
+{% for category in categories %}
+
+- <a href="{% url 'category' category.id %}">{{ category.name }}</a>
+<br/>
+
+{% empty %}
+  - Brak kategorii
+{% endfor %}
+
+</body>
+</html>

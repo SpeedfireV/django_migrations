@@ -1,0 +1,15 @@
+<a href="{% url 'home' %}">Strona Główna</a>
+
+<br/><br/><br/>
+To jest strona kategorii {{ category.name }}
+<br/><br/><br/>
+
+Dostępne {{ products.count }} produkty:<br/>
+
+{% for product in products %}
+
+    - {{ product.name }}, {{ product.price }}
+    <a href="{% url 'product' product.id %}">strona produktu</a>
+    <br/>
+
+{% endfor %}

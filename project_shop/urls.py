@@ -1,3 +1,5 @@
+from products import views
+
 """project_shop URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
@@ -18,4 +20,11 @@ from django.urls import path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+
+    path('', views.home, name='home'),
+    path('category-<int:category_id>/', views.category_view, name='category'),
+    path('product-<int:product_id>/', views.product_view, name="product"),
+    path('order-<int:product_id>-<slug:color>/', views.order_view, name="order"),
+
+
 ]

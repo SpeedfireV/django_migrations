@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Zamówienie {{ product }}</title>
+</head>
+<body>
+
+<br/>
+<form method="post" action="">
+    {% csrf_token %}
+
+    Nazwisko <input name="surname"> <br/><br/>
+
+    Ilość <input name="count" type="number" min="1" value="1">
+
+    <input type="submit" value="Przejdź do płatności">
+</form>
+</br>
+
+
+
+
+
+</body>
+</html>
